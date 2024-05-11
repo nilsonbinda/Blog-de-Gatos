@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+:root{
+
+    font-size: 62.5%;
+
+    --color-blue: #065E7C;
+    --color-white: #FFFFFF;
+    --color-input-blue: #387E96;
+    --color-text-black: #121214;
+    --color-title-black: #202024;
+
+    font-family: "Mulish", sans-serif;
+}
+
+.wrap{
+    min-width: 43.4rem;
+    display: grid;
+}
+
+header{
+    background-color: var(--color-blue);
+    padding: 1.6rem 2.8rem;
+    
+}
+
+.nav{
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.6rem;
+}
+
+.nav form label{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.nav form, .nav form input{
+    width: 100%;
+}
+
+.nav form input{
+    height: 4rem;
+    border: 0;
+    background-color: var(--color-input-blue);
+
+    border-radius: 4px;
+
+    color: black;
+
+    padding: 0 1.4rem;
+    font-weight: 600;
+}
+
+.nav form input::placeholder{
+    color:var(--color-white);
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+}
+
+h1, h2, strong{
+    font-weight: 700;
+}
+
+h1, h2{
+    font-size: 2.4rem;
+    line-height: 160%;
+    color: var(--color-title-black);
+}
+
+p{
+    color: var(--color-text-black);
+}
+
+main section:nth-child(2){
+    padding: 3.2rem 2.2rem;
+}
+
+main section p{
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 160%;
+}
+
+
+.poster{
+    width: 100%;
+}
+
+.like{
+    display: flex;
+    gap: 1.2rem;
+    margin: .8rem 0 3rem;
+}
+
+.sidebar{
+    padding: 0 2.2rem 3.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+}
+
+.card p{
+    font-size: 1.4rem;
+    padding-top: 1.5rem;
+}
+
+.card strong{
+    font-size: 1.8rem;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-input-blue);
+
+    height: 6.4rem;
+
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--color-white);
+}
+
+@media (min-width: 1200px) {
+    .wrap{
+        grid-template-areas: 
+        "A A A"
+        "B B C"
+        "D D D"
+        ;
+        row-gap: 4rem;
+        align-content: start;
+
+        max-width: 122rem;
+        margin: 0 auto;
+    }
+
+    header{
+        grid-area: A;
+    }
+    main{
+        grid-area: B;
+    }
+    .sidebar{
+        grid-area: C;
+        max-width: 38rem;
+        padding: 0 0 0 3.4rem;
+    }
+    footer{
+        grid-area: D;
+    }
+
+    .nav{
+        max-width: 122rem;
+        margin:0 auto;
+    }
+}
